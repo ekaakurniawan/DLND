@@ -6,7 +6,7 @@ import torch.nn as nn
 import torch.optim
 
 
-def _get_loss_acc(model, train_loader, valid_loader):
+def _get_loss_acc(model, train_loader, valid_loader, device):
     """
     Get losses and validation accuracy of example neural network
     """
@@ -29,6 +29,8 @@ def _get_loss_acc(model, train_loader, valid_loader):
         # train the model #
         ###################
         for data, target in train_loader:
+            # send to GPU if available
+            data, target = data.to(device), target.to(device)
             # clear the gradients of all optimized variables
             optimizer.zero_grad()
             # forward pass: compute predicted outputs by passing inputs to the model
@@ -46,6 +48,8 @@ def _get_loss_acc(model, train_loader, valid_loader):
     correct = 0
     total = 0
     for data, target in valid_loader:
+        # send to GPU if available
+        data, target = data.to(device), target.to(device)
         # forward pass: compute predicted outputs by passing inputs to the model
         output = model(data)
         # get the predicted class from the maximum class score
@@ -68,6 +72,7 @@ def compare_init_weights(
         plot_title,
         train_loader,
         valid_loader,
+        device,
         plot_n_batches=100):
     """
     Plot loss and print stats of weights using an example neural network
@@ -79,7 +84,7 @@ def compare_init_weights(
     assert len(model_list) <= len(colors), 'Too many initial weights to plot'
 
     for i, (model, label) in enumerate(model_list):
-        loss, val_acc = _get_loss_acc(model, train_loader, valid_loader)
+        loss, val_acc = _get_loss_acc(model, train_loader, valid_loader, device)
 
         plt.plot(loss[:plot_n_batches], colors[i], label=label)
         label_accs.append((label, val_acc))
@@ -105,5 +110,5 @@ def hist_dist(title, distribution_tensor, hist_range=(-4, 4)):
     Display histogram of values in a given distribution tensor
     """
     plt.title(title)
-    plt.hist(distribution_tensor, np.linspace(*hist_range, num=len(distribution_tensor)/2))
+    plt.hist(distribution_tensor, np.linspace(*hist_range, num=int(len(distribution_tensor)/2)))
     plt.show()
