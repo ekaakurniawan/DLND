@@ -39,3 +39,73 @@ Deep Learning Nanodegree from Udacity
  - [Project 4: Generating TV Script](./P4-Generating-TV-Script/dlnd_tv_script_generation.ipynb)
  - [Project 5: Generating Face](./P5-Generating-Face/dlnd_face_generation.ipynb)
  - [Project 7: Deploying Sentiment Analysis Model](./P7-Deploying-Sentiment-Analysis-Model/SageMaker%20Project.ipynb)
+
+## Setup
+
+### Intel GPU
+
+Please follow 
+[PyTorch 2.6 Prerequisites for Intel GPUs](https://www.intel.com/content/www/us/en/developer/articles/tool/pytorch-prerequisites-for-intel-gpu/2-6.html)
+article to install Intel GPU driver and deep learning essentials.
+
+Tested on the following hardware specification and software version.
+
+__Hardware Specification__
+ - CPU: Intel® Core™ Ultra 9 Processor 285K
+ - CPU Cores: 24 (8 Performance-cores and 16 Efficient-cores)
+ - CPU Threads: 24
+ - Memory: 32 GiB
+ - GPU: Intel® Arc™ A770 Graphics
+ - GPU Memory: 16 GiB
+ 
+__Software Version__
+ - Ubuntu 24.04.1 LTS
+ - Python 3.12.3
+ - PyTorch 2.6.0+xpu
+ - TorchVision 0.21.0+xpu
+ - opencv-python 4.10.0.84
+ - NumPy 2.1.2
+ - Matplotlib 3.10.0
+ - Pandas 2.2.3
+ - Intel Deep Learning Essentials 2025.0.1-25
+
+### Install Requirements
+
+Create virtual environment.
+```
+$ python3 -m venv pytorch_arc_env
+$ source pytorch_arc_env/bin/activate
+$ python -m pip install --upgrade pip
+```
+
+Install PyTorch and other required packages.
+```
+$ pip install torch==2.6 torchvision torchaudio --index-url https://download.pytorch.org/whl/test/xpu
+$ cd DLND
+$ pip install --upgrade -r requirements.txt
+```
+
+### Test Run
+
+Activate virtual environment and setup variables.
+```
+$ source pytorch_arc_env/bin/activate
+
+$ source /opt/intel/oneapi/compiler/2025.0/env/vars.sh
+$ source /opt/intel/oneapi/umf/0.9/env/vars.sh
+$ source /opt/intel/oneapi/pti/0.10/env/vars.sh
+```
+
+Detect GPU.
+```
+$ python -c "import torch; print(torch.xpu.is_available())"
+```
+```
+True
+```
+
+Run notebooks.
+```
+$ cd DLND
+$ jupyter lab
+```
