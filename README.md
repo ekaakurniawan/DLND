@@ -60,6 +60,7 @@ __Hardware Specification__
  
 __Software Version__
  - Ubuntu 24.04.1 LTS
+ - Intel Deep Learning Essentials 2025.0.1-25
  - Python 3.12.3
  - PyTorch 2.6.0+xpu
  - TorchVision 0.21.0+xpu
@@ -67,7 +68,7 @@ __Software Version__
  - NumPy 2.1.2
  - Matplotlib 3.10.0
  - Pandas 2.2.3
- - Intel Deep Learning Essentials 2025.0.1-25
+ - scikit-learn 1.6.0
 
 ### Install Requirements
 
@@ -91,6 +92,7 @@ Activate virtual environment and setup variables.
 ```
 $ source pytorch_arc_env/bin/activate
 
+$ source /opt/intel/oneapi/setvars.sh
 $ source /opt/intel/oneapi/compiler/2025.0/env/vars.sh
 $ source /opt/intel/oneapi/umf/0.9/env/vars.sh
 $ source /opt/intel/oneapi/pti/0.10/env/vars.sh
