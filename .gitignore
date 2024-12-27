@@ -4,3 +4,4 @@ FashionMNIST
 MNIST
 *.pyc
 *.pkl
+*.mat
