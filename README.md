@@ -26,7 +26,7 @@ Deep Learning Nanodegree from Udacity
  - Lecture 4: CycleGAN
     - [Summer to Winter Image Transformation](./assignments/P5-GAN/L4-implementing-a-cyclegan/CycleGAN_Exercise.ipynb): Only for CPU and CUDA. XPU has memory leak issue.
 #### Part 6: Deploying Model
-Only for CPU and CUDA. AWS does not support XPU.
+Inference on CPU only not using XPU or CUDA.
  - Lecture 2: Building a Model using SageMaker
     - [Predicting Boston Housing - XGBoost - Batch Transform - High Level](./assignments/P6-deploying-model/L2-building-a-model-using-sagemaker/Boston%20Housing%20-%20XGBoost%20(Batch%20Transform)%20-%20High%20Level.ipynb)
     - [Sentiment Analysis - XGBoost - Batch Transform](./assignments/P6-deploying-model/L2-building-a-model-using-sagemaker/IMDB%20Sentiment%20Analysis%20-%20XGBoost%20(Batch%20Transform).ipynb)
