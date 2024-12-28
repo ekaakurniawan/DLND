@@ -10,8 +10,8 @@ Deep Learning Nanodegree from Udacity
     - [Weight Initialization](./assignments/P3-CNN/L4-weight-initialization/weight_initialization_exercise.ipynb)
  - Lecture 5: Autoencoder
     - [Simple Autoencoder](./assignments/P3-CNN/L5-autoencoder/Simple_Autoencoder_Exercise.ipynb)
-    - [Convolutional Autoencoder](./assignments/P3-CNN/L5-autoencoder/Convolutional_Autoencoder_Exercise.ipynb)
-    - [Denoising Autoencoder](./assignments/P3-CNN/L5-autoencoder/Denoising_Autoencoder_Exercise.ipynb)
+    - [Convolutional Autoencoder](./assignments/P3-CNN/L5-autoencoder/Convolutional_Autoencoder_Exercise.ipynb): Only for CPU and CUDA. XPU has memory leak issue.
+    - [Denoising Autoencoder](./assignments/P3-CNN/L5-autoencoder/Denoising_Autoencoder_Exercise.ipynb): Only for CPU and CUDA. XPU has memory leak issue.
 #### Part 4: Recurrent Neural Networks
  - Lecture 5: Embeddings & Word2Vec
     - [Skip Grams](./assignments/P4-RNN/L5-embeddings-word2vec/Skip_Grams_Exercise.ipynb)
@@ -22,10 +22,11 @@ Deep Learning Nanodegree from Udacity
     - [MNIST GAN](./assignments/P5-GAN/L1-generative-adversarial-networks/MNIST_GAN_Exercise.ipynb)
  - Lecture 2: Deep Convolutional GANs
     - [Batch Normalization](./assignments/P5-GAN/L2-deep-convolutional-gans/batch-norm/Batch_Normalization.ipynb)
-    - [Generating Street View Home Number (SVHN)](./assignments/P5-GAN/L2-deep-convolutional-gans/dcgan-svhn/DCGAN_Exercise.ipynb)
+    - [Generating Street View Home Number (SVHN)](./assignments/P5-GAN/L2-deep-convolutional-gans/dcgan-svhn/DCGAN_Exercise.ipynb): Only for CPU and CUDA. XPU has memory leak issue.
  - Lecture 4: CycleGAN
-    - [Summer to Winter Image Transformation](./assignments/P5-GAN/L4-implementing-a-cyclegan/CycleGAN_Exercise.ipynb)
+    - [Summer to Winter Image Transformation](./assignments/P5-GAN/L4-implementing-a-cyclegan/CycleGAN_Exercise.ipynb): Only for CPU and CUDA. XPU has memory leak issue.
 #### Part 6: Deploying Model
+Inference on CPU only (not using XPU or CUDA).
  - Lecture 2: Building a Model using SageMaker
     - [Predicting Boston Housing - XGBoost - Batch Transform - High Level](./assignments/P6-deploying-model/L2-building-a-model-using-sagemaker/Boston%20Housing%20-%20XGBoost%20(Batch%20Transform)%20-%20High%20Level.ipynb)
     - [Sentiment Analysis - XGBoost - Batch Transform](./assignments/P6-deploying-model/L2-building-a-model-using-sagemaker/IMDB%20Sentiment%20Analysis%20-%20XGBoost%20(Batch%20Transform).ipynb)
@@ -92,7 +93,6 @@ Activate virtual environment and setup variables.
 ```
 $ source pytorch_arc_env/bin/activate
 
-$ source /opt/intel/oneapi/setvars.sh
 $ source /opt/intel/oneapi/compiler/2025.0/env/vars.sh
 $ source /opt/intel/oneapi/umf/0.9/env/vars.sh
 $ source /opt/intel/oneapi/pti/0.10/env/vars.sh
