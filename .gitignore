@@ -5,3 +5,5 @@ MNIST
 *.pyc
 *.pkl
 *.mat
+summer2winter-yosemite
+samples_cyclegan
