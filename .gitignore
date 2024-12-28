@@ -7,3 +7,6 @@ MNIST
 *.mat
 summer2winter-yosemite
 samples_cyclegan
+lfw
+dog_images
+*.pt
