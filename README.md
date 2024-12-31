@@ -37,7 +37,7 @@ Inference on CPU only (not using XPU or CUDA).
 ### Projects
  - [Project 1: Predicting Bike-Sharing Patterns](./P1-Predicting-Bike-Sharing-Patterns/Your_first_neural_network.ipynb)
  - [Project 2: Classifying Dog's Breed](./P2-Dog-Classification/dog_app.ipynb)
- - [Project 4: Generating TV Script](./P4-Generating-TV-Script/dlnd_tv_script_generation.ipynb)
+ - [Project 4: Generating TV Script](./P4-Generating-TV-Script/dlnd_tv_script_generation.ipynb): Only for CPU and CUDA. ['aten::_thnn_fused_lstm_cell' is not currently implemented for the XPU](https://github.com/intel/torch-xpu-ops/issues/1231).
  - [Project 5: Generating Face](./P5-Generating-Face/dlnd_face_generation.ipynb)
  - [Project 7: Deploying Sentiment Analysis Model](./P7-Deploying-Sentiment-Analysis-Model/SageMaker%20Project.ipynb)
 
