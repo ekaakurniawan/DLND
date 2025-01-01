@@ -10,3 +10,5 @@ samples_cyclegan
 lfw
 dog_images
 *.pt
+preprocess.p
+generated_script_1.txt
