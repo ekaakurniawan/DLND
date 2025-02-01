@@ -12,3 +12,4 @@ dog_images
 *.pt
 preprocess.p
 generated_script_1.txt
+processed_celeba_small
