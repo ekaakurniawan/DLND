@@ -65,11 +65,11 @@ __Software Version__
  - Python 3.12.3
  - PyTorch 2.6.0+xpu
  - TorchVision 0.21.0+xpu
- - opencv-python 4.10.0.84
+ - opencv-python 4.11.0.86
  - NumPy 2.1.2
  - Matplotlib 3.10.0
  - Pandas 2.2.3
- - scikit-learn 1.6.0
+ - scikit-learn 1.6.1
 
 ### Install Requirements
 
@@ -82,7 +82,7 @@ $ python -m pip install --upgrade pip
 
 Install PyTorch and other required packages.
 ```
-$ pip install torch==2.6 torchvision torchaudio --index-url https://download.pytorch.org/whl/test/xpu
+$ pip install torch==2.6 torchvision torchaudio --index-url https://download.pytorch.org/whl/xpu
 $ cd DLND
 $ pip install --upgrade -r requirements.txt
 ```
