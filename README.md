@@ -10,8 +10,8 @@ Deep Learning Nanodegree from Udacity
     - [Weight Initialization](./assignments/P3-CNN/L4-weight-initialization/weight_initialization_exercise.ipynb)
  - Lecture 5: Autoencoder
     - [Simple Autoencoder](./assignments/P3-CNN/L5-autoencoder/Simple_Autoencoder_Exercise.ipynb)
-    - [Convolutional Autoencoder](./assignments/P3-CNN/L5-autoencoder/Convolutional_Autoencoder_Exercise.ipynb): Only for CPU and CUDA. XPU has memory leak issue.
-    - [Denoising Autoencoder](./assignments/P3-CNN/L5-autoencoder/Denoising_Autoencoder_Exercise.ipynb): Only for CPU and CUDA. XPU has memory leak issue.
+    - [Convolutional Autoencoder](./assignments/P3-CNN/L5-autoencoder/Convolutional_Autoencoder_Exercise.ipynb)
+    - [Denoising Autoencoder](./assignments/P3-CNN/L5-autoencoder/Denoising_Autoencoder_Exercise.ipynb)
 #### Part 4: Recurrent Neural Networks
  - Lecture 5: Embeddings & Word2Vec
     - [Skip Grams](./assignments/P4-RNN/L5-embeddings-word2vec/Skip_Grams_Exercise.ipynb)
@@ -38,14 +38,15 @@ Inference on CPU only (not using XPU or CUDA).
  - [Project 1: Predicting Bike-Sharing Patterns](./P1-Predicting-Bike-Sharing-Patterns/Your_first_neural_network.ipynb)
  - [Project 2: Classifying Dog's Breed](./P2-Dog-Classification/dog_app.ipynb)
  - [Project 4: Generating TV Script](./P4-Generating-TV-Script/dlnd_tv_script_generation.ipynb)
- - [Project 5: Generating Face](./P5-Generating-Face/dlnd_face_generation.ipynb)
- - [Project 7: Deploying Sentiment Analysis Model](./P7-Deploying-Sentiment-Analysis-Model/SageMaker%20Project.ipynb)
+ - [Project 5: Generating Face](./P5-Generating-Face/dlnd_face_generation.ipynb): Only for CPU and CUDA. XPU has memory leak issue.
+ - [Project 7: Deploying Sentiment Analysis Model](./P7-Deploying-Sentiment-Analysis-Model/SageMaker%20Project.ipynb): Only for CPU and CUDA. SageMaker does not support XPU.
 
 ## Setup
 
 ### Intel GPU
 
-Please follow 
+Although we are going to use PyTorch 2.7 nightly with 
+memory leak issue fixed, please follow 
 [PyTorch 2.6 Prerequisites for Intel GPUs](https://www.intel.com/content/www/us/en/developer/articles/tool/pytorch-prerequisites-for-intel-gpu/2-6.html)
 article to install Intel GPU driver and deep learning essentials.
 
@@ -63,13 +64,13 @@ __Software Version__
  - Ubuntu 24.04.1 LTS
  - Intel Deep Learning Essentials 2025.0.1-25
  - Python 3.12.3
- - PyTorch 2.6.0+xpu
- - TorchVision 0.21.0+xpu
- - opencv-python 4.10.0.84
+ - PyTorch 2.7.0.dev20250214+xpu
+ - TorchVision 0.22.0.dev20250214+xpu
+ - opencv-python 4.11.0.86
  - NumPy 2.1.2
  - Matplotlib 3.10.0
  - Pandas 2.2.3
- - scikit-learn 1.6.0
+ - scikit-learn 1.6.1
 
 ### Install Requirements
 
@@ -82,7 +83,7 @@ $ python -m pip install --upgrade pip
 
 Install PyTorch and other required packages.
 ```
-$ pip install torch==2.6 torchvision torchaudio --index-url https://download.pytorch.org/whl/test/xpu
+$ pip install --pre torch==2.7.0.dev20250214+xpu torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/xpu
 $ cd DLND
 $ pip install --upgrade -r requirements.txt
 ```

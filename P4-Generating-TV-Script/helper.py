@@ -52,4 +52,4 @@ def save_model(filename, decoder):
 
 def load_model(filename):
     save_filename = os.path.splitext(os.path.basename(filename))[0] + '.pt'
-    return torch.load(save_filename)
+    return torch.load(save_filename, weights_only=False)

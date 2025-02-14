@@ -135,7 +135,7 @@ def test_tokenize(token_lookup):
     _print_success_message()
 
 
-def test_rnn(RNN, train_on_gpu):
+def test_rnn(RNN, device="cpu"):
     batch_size = 50
     sequence_length = 3
     vocab_size = 20
@@ -154,10 +154,8 @@ def test_rnn(RNN, train_on_gpu):
     b = torch.from_numpy(a)
     hidden = rnn.init_hidden(batch_size)
     
-    
-    if(train_on_gpu):
-        rnn.cuda()
-        b = b.cuda()
+    rnn.to(device)
+    b = b.to(device)
     
     output, hidden_out = rnn(b, hidden)
     
@@ -190,7 +188,7 @@ def test_rnn(RNN, train_on_gpu):
     _print_success_message()
 
 
-def test_forward_back_prop(RNN, forward_back_prop, train_on_gpu):
+def test_forward_back_prop(RNN, forward_back_prop, device="cpu"):
     batch_size = 200
     input_size = 20
     output_size = 10
@@ -204,8 +202,7 @@ def test_forward_back_prop(RNN, forward_back_prop, train_on_gpu):
     rnn = RNN(input_size, output_size, embedding_dim, hidden_dim, n_layers)
     
     mock_decoder = MagicMock(wraps=_TestNN(input_size, output_size))
-    if train_on_gpu:
-        mock_decoder.cuda()
+    mock_decoder.to(device)
     
     mock_decoder_optimizer = MagicMock(wraps=torch.optim.Adam(mock_decoder.parameters(), lr=learning_rate))
     mock_criterion = MagicMock(wraps=torch.nn.CrossEntropyLoss())
