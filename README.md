@@ -10,8 +10,8 @@ Deep Learning Nanodegree from Udacity
     - [Weight Initialization](./assignments/P3-CNN/L4-weight-initialization/weight_initialization_exercise.ipynb)
  - Lecture 5: Autoencoder
     - [Simple Autoencoder](./assignments/P3-CNN/L5-autoencoder/Simple_Autoencoder_Exercise.ipynb)
-    - [Convolutional Autoencoder](./assignments/P3-CNN/L5-autoencoder/Convolutional_Autoencoder_Exercise.ipynb)
-    - [Denoising Autoencoder](./assignments/P3-CNN/L5-autoencoder/Denoising_Autoencoder_Exercise.ipynb)
+    - [Convolutional Autoencoder](./assignments/P3-CNN/L5-autoencoder/Convolutional_Autoencoder_Exercise.ipynb): Only for CPU and CUDA. XPU has memory leak issue.
+    - [Denoising Autoencoder](./assignments/P3-CNN/L5-autoencoder/Denoising_Autoencoder_Exercise.ipynb): Only for CPU and CUDA. XPU has memory leak issue.
 #### Part 4: Recurrent Neural Networks
  - Lecture 5: Embeddings & Word2Vec
     - [Skip Grams](./assignments/P4-RNN/L5-embeddings-word2vec/Skip_Grams_Exercise.ipynb)
@@ -22,10 +22,11 @@ Deep Learning Nanodegree from Udacity
     - [MNIST GAN](./assignments/P5-GAN/L1-generative-adversarial-networks/MNIST_GAN_Exercise.ipynb)
  - Lecture 2: Deep Convolutional GANs
     - [Batch Normalization](./assignments/P5-GAN/L2-deep-convolutional-gans/batch-norm/Batch_Normalization.ipynb)
-    - [Generating Street View Home Number (SVHN)](./assignments/P5-GAN/L2-deep-convolutional-gans/dcgan-svhn/DCGAN_Exercise.ipynb)
+    - [Generating Street View Home Number (SVHN)](./assignments/P5-GAN/L2-deep-convolutional-gans/dcgan-svhn/DCGAN_Exercise.ipynb): Only for CPU and CUDA. XPU has memory leak issue.
  - Lecture 4: CycleGAN
-    - [Summer to Winter Image Transformation](./assignments/P5-GAN/L4-implementing-a-cyclegan/CycleGAN_Exercise.ipynb)
+    - [Summer to Winter Image Transformation](./assignments/P5-GAN/L4-implementing-a-cyclegan/CycleGAN_Exercise.ipynb): Only for CPU and CUDA. XPU has memory leak issue.
 #### Part 6: Deploying Model
+Inference on CPU only (not using XPU or CUDA).
  - Lecture 2: Building a Model using SageMaker
     - [Predicting Boston Housing - XGBoost - Batch Transform - High Level](./assignments/P6-deploying-model/L2-building-a-model-using-sagemaker/Boston%20Housing%20-%20XGBoost%20(Batch%20Transform)%20-%20High%20Level.ipynb)
     - [Sentiment Analysis - XGBoost - Batch Transform](./assignments/P6-deploying-model/L2-building-a-model-using-sagemaker/IMDB%20Sentiment%20Analysis%20-%20XGBoost%20(Batch%20Transform).ipynb)
@@ -37,8 +38,8 @@ Deep Learning Nanodegree from Udacity
  - [Project 1: Predicting Bike-Sharing Patterns](./P1-Predicting-Bike-Sharing-Patterns/Your_first_neural_network.ipynb)
  - [Project 2: Classifying Dog's Breed](./P2-Dog-Classification/dog_app.ipynb)
  - [Project 4: Generating TV Script](./P4-Generating-TV-Script/dlnd_tv_script_generation.ipynb)
- - [Project 5: Generating Face](./P5-Generating-Face/dlnd_face_generation.ipynb)
- - [Project 7: Deploying Sentiment Analysis Model](./P7-Deploying-Sentiment-Analysis-Model/SageMaker%20Project.ipynb)
+ - [Project 5: Generating Face](./P5-Generating-Face/dlnd_face_generation.ipynb): Only for CPU and CUDA. XPU has memory leak issue.
+ - [Project 7: Deploying Sentiment Analysis Model](./P7-Deploying-Sentiment-Analysis-Model/SageMaker%20Project.ipynb): Only for CPU and CUDA. SageMaker does not support XPU.
 
 ## Setup
 
@@ -60,14 +61,15 @@ __Hardware Specification__
  
 __Software Version__
  - Ubuntu 24.04.1 LTS
+ - Intel Deep Learning Essentials 2025.0.1-25
  - Python 3.12.3
  - PyTorch 2.6.0+xpu
  - TorchVision 0.21.0+xpu
- - opencv-python 4.10.0.84
+ - opencv-python 4.11.0.86
  - NumPy 2.1.2
  - Matplotlib 3.10.0
  - Pandas 2.2.3
- - Intel Deep Learning Essentials 2025.0.1-25
+ - scikit-learn 1.6.1
 
 ### Install Requirements
 
@@ -80,7 +82,7 @@ $ python -m pip install --upgrade pip
 
 Install PyTorch and other required packages.
 ```
-$ pip install torch==2.6 torchvision torchaudio --index-url https://download.pytorch.org/whl/test/xpu
+$ pip install torch==2.6 torchvision torchaudio --index-url https://download.pytorch.org/whl/xpu
 $ cd DLND
 $ pip install --upgrade -r requirements.txt
 ```

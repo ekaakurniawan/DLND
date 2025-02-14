@@ -2,3 +2,14 @@
 __pycache__
 FashionMNIST
 MNIST
+*.pyc
+*.pkl
+*.mat
+summer2winter-yosemite
+samples_cyclegan
+lfw
+dog_images
+*.pt
+preprocess.p
+generated_script_1.txt
+processed_celeba_small
