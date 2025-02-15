@@ -53,18 +53,15 @@ def merge_images(sources, targets, batch_size=16):
 
 def to_data(x):
     """Converts variable to numpy."""
-    if torch.cuda.is_available():
-        x = x.cpu()
-    x = x.data.numpy()
+    x = x.to("cpu").data.numpy()
     x = ((x +1)*255 / (2)).astype(np.uint8) # rescale to 0-255
     return x
 
-def save_samples(iteration, fixed_Y, fixed_X, G_YtoX, G_XtoY, batch_size=16, sample_dir='samples_cyclegan'):
+def save_samples(iteration, fixed_Y, fixed_X, G_YtoX, G_XtoY, batch_size=16, sample_dir='samples_cyclegan', \
+                 device="cpu"):
     """Saves samples from both generators X->Y and Y->X.
         """
     # move input data to correct device
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
     fake_X = G_YtoX(fixed_Y.to(device))
     fake_Y = G_XtoY(fixed_X.to(device))
     
