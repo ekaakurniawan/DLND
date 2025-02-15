@@ -22,9 +22,9 @@ Deep Learning Nanodegree from Udacity
     - [MNIST GAN](./assignments/P5-GAN/L1-generative-adversarial-networks/MNIST_GAN_Exercise.ipynb)
  - Lecture 2: Deep Convolutional GANs
     - [Batch Normalization](./assignments/P5-GAN/L2-deep-convolutional-gans/batch-norm/Batch_Normalization.ipynb)
-    - [Generating Street View Home Number (SVHN)](./assignments/P5-GAN/L2-deep-convolutional-gans/dcgan-svhn/DCGAN_Exercise.ipynb): Only for CPU and CUDA. XPU has memory leak issue.
+    - [Generating Street View Home Number (SVHN)](./assignments/P5-GAN/L2-deep-convolutional-gans/dcgan-svhn/DCGAN_Exercise.ipynb)
  - Lecture 4: CycleGAN
-    - [Summer to Winter Image Transformation](./assignments/P5-GAN/L4-implementing-a-cyclegan/CycleGAN_Exercise.ipynb): Only for CPU and CUDA. XPU has memory leak issue.
+    - [Summer to Winter Image Transformation](./assignments/P5-GAN/L4-implementing-a-cyclegan/CycleGAN_Exercise.ipynb)
 #### Part 6: Deploying Model
 Inference on CPU only (not using XPU or CUDA).
  - Lecture 2: Building a Model using SageMaker
