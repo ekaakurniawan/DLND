@@ -62,6 +62,7 @@ __Hardware Specification__
  
 __Software Version__
  - Ubuntu 24.04.1 LTS
+ - Intel Graphics Compute Runtime [24.52.32224.5](https://github.com/intel/compute-runtime/releases/tag/24.52.32224.5)
  - Intel Deep Learning Essentials 2025.0.1-25
  - Python 3.12.3
  - PyTorch 2.7.0.dev20250214+xpu
