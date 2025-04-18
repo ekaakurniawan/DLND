@@ -113,3 +113,16 @@ Run notebooks.
 $ cd DLND
 $ jupyter lab
 ```
+
+## Monitoring Tools
+
+### Ubuntu
+ - [top](https://man7.org/linux/man-pages/man1/top.1.html): CPU utilization and memory utilization for CPU and iGPU.
+ - [Intel GPU top](https://manpages.ubuntu.com/manpages/noble/man1/intel_gpu_top.1.html): Intel iGPU and dGPU utilization.
+ - [Intel PCM](https://github.com/intel/pcm): Intel CPU and iGPU power consumption.
+ - [Intel XPU-SMI](https://intel.github.io/xpumanager/smi_install_guide.html): Intel dGPU power consumption and memory utilization.
+ - [NVIDIA SMI](https://docs.nvidia.com/deploy/nvidia-smi/index.html): NVIDIA dGPU utilization and power consumption.
+
+### Windows
+
+ - [HWiNFO](https://www.hwinfo.com/): CPU, iGPU, and dGPU utilization and power consumption.
